@@ -14,6 +14,7 @@ require 'support/database_cleaner'
 require 'support/factory_girl'
 require 'support/devise'
 require 'support/controller_wade'
+require 'support/warden'
 
 ActiveRecord::Migration.maintain_test_schema!
 
