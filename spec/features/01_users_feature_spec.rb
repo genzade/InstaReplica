@@ -12,7 +12,7 @@ feature 'users' do
       click_link 'Sign Up'
       fill_in 'Email', with: 'wade_wilson@test.com'
       fill_in 'Password', with: 'deadpool'
-      fill_in 'Password_confirmation', with: 'deadpool'
+      fill_in 'Password confirmation', with: 'deadpool'
       click_button 'Sign up'
 
       expect(page).to have_content 'wade_wilson@test.com'
