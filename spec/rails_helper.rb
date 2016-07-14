@@ -8,6 +8,7 @@ require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'devise'
 require 'capybara/rails'
+require 'paperclip/matchers'
 require 'capybara/poltergeist'
 Capybara.javascript_driver = :poltergeist
 require 'support/database_cleaner'
@@ -19,6 +20,7 @@ require 'support/warden'
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
+  config.include Paperclip::Shoulda::Matchers
   config.extend ControllerWade, type: :controller
 
   config.fixture_path = "#{::Rails.root}/spec/fixtures"

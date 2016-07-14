@@ -41,7 +41,7 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'shoulda'
+  gem 'shoulda-matchers'
   gem 'poltergeist'
   gem 'database_cleaner'
 end
