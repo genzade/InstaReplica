@@ -12,16 +12,18 @@ feature 'posts' do
   context 'creating a post' do
     context 'signed in user' do
       before(:each) do
-      user = FactoryGirl.create(:user) ; login_as(user)  
+        user = FactoryGirl.create(:user) ; login_as(user)  
       end
 
       scenario 'can create a new post' do
         visit '/posts'
         click_link 'Add a post'
-        fill_in :description, with: 'the finest'
-        attach_file :image, './spec/images/wilson_matt_n_peter.png'
-        click_button 'Post It!'
+        # click_button 'Choose File'
+        attach_file :post_image, './spec/images/wilson_matt_n_peter.png'
+        fill_in :post_caption, with: 'the finest'
+        click_button 'Create Post'
 
+        expect(current_path).to eq posts_path
         expect(page).to have_css 'img[src*=\'wilson_matt_n_peter.png\']'
         expect(page).to have_content 'the finest'
       end
