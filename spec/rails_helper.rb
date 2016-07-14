@@ -16,6 +16,7 @@ require 'support/factory_girl'
 require 'support/devise'
 require 'support/controller_wade'
 require 'support/warden'
+require 'support/shoulda_matcher'
 
 ActiveRecord::Migration.maintain_test_schema!
 
