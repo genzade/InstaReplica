@@ -18,7 +18,6 @@ feature 'posts' do
       scenario 'can create a new post' do
         visit '/posts'
         click_link 'Add a post'
-        # click_button 'Choose File'
         attach_file :post_image, './spec/images/wilson_matt_n_peter.png'
         fill_in :post_caption, with: 'the finest'
         click_button 'Create Post'
