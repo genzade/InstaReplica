@@ -28,4 +28,14 @@ feature 'posts' do
       end
     end
   end
+
+  context 'when not signed in' do
+    scenario 'cannot create a post' do
+      visit '/posts'
+      click_link 'Add a post'
+      
+      expect(current_path).to eq new_user_session_path
+      expect(page).to have_content 'You need to sign in or sign up'
+    end
+  end
 end

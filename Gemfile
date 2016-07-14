@@ -27,6 +27,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'paperclip'
 
+group :test do
+  gem 'capybara'
+  gem 'shoulda-matchers'
+  gem 'poltergeist'
+  gem 'database_cleaner'
+end
+
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
@@ -37,11 +44,4 @@ end
 
 group :development do
   gem 'web-console', '~> 2.0'
-end
-
-group :test do
-  gem 'capybara'
-  gem 'shoulda-matchers'
-  gem 'poltergeist'
-  gem 'database_cleaner'
 end

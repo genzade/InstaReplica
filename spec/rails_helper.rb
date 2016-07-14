@@ -8,9 +8,9 @@ require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'devise'
 require 'capybara/rails'
-require 'paperclip/matchers'
 require 'capybara/poltergeist'
 Capybara.javascript_driver = :poltergeist
+require 'paperclip/matchers'
 require 'support/database_cleaner'
 require 'support/factory_girl'
 require 'support/devise'
