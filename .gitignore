@@ -13,4 +13,3 @@
 /tmp
 
 *.DS_Store
-spec/test_files/posts/**
