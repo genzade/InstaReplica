@@ -13,7 +13,7 @@ feature 'posts' do
     before(:each) do
       user = FactoryGirl.create(:user) ; login_as(user)  
     end
-    
+
     context 'creating a post' do
 
       scenario 'can create a new post' do
@@ -37,7 +37,7 @@ feature 'posts' do
         fill_in :post_caption, with: 'the finest'
         click_button 'Create Post'
 
-        click_button 'Delete Post'
+        click_link 'Delete Post'
         expect(current_path).to eq posts_path
         expect(page).to have_content 'Post deleted successfully'
         expect(page).not_to have_css 'img[src*=\'wilson_matt_n_peter.png\']'

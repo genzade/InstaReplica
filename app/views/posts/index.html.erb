@@ -2,6 +2,7 @@
   <% @posts.each do |post| %>
     <%= image_tag post.image.url(:medium) %>
     <h2><%= post.caption %> </h2>
+    <%= link_to "Delete Post", post_path(post), method: :delete %>
   <% end %>
 <% else %>
   <h2>No posts yet</h2>
